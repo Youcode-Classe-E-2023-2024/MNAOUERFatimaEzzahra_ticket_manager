@@ -14,32 +14,39 @@
         <table class="table">
             <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">id</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Status</th>
+                <th scope="col">Priority</th>
+                <th scope="col">Created By</th>
+                <th scope="col">Created At</th>
             </tr>
             </thead>
+
+            <?php
+            global $db;
+
+            $result = $db->query("SELECT * FROM tickets;");
+            $posts = $result->fetch_all(1);
+            ?>
+
+            <?php foreach ($result as $ticket) : ?>
             <tbody>
             <tr>
-                <th scope="row">1</th>
-                <td><a href="index.php?page=ticket_detail">Mark</a></td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <th scope="row"><?= $ticket['tickets_id']?></th>
+                <td><a href="index.php?page=ticket_detail"><?= $ticket['tickets_title']?>'</a></td>
+                <td><?= $ticket['tickets_desc']?></td>
+                <td><?= $ticket['tickets_status']?></td>
+                <td><?= $ticket['tickets_priority']?></td>
+                <td><?= $ticket['tickets_created_by']?></td>
+                <td><?= $ticket['tickets_created_at']?></td>
+
             </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-            </tr>
+           
             </tbody>
+            <?php endforeach; ?>
+
         </table>
     </div>
 

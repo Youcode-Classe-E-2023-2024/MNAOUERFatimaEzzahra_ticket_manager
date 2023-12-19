@@ -8,22 +8,21 @@
 <?php include_once 'includes/navbar.php' ?>
 
 <main class="container">
-    <form>
+    <form action="index.php?page=ticket_form" method="post">
         <div class="container">
             <div class="mb-3">
-                <label for="" class="form-label">Titre</label>
-                <input type="text" class="form-control" id="exampleInputTitre" aria-describedby="Titre">
+                <label for="exampleInputTitre" class="form-label">Title</label>
+                <input name="tickets_title" type="text" class="form-control" id="exampleInputTitre" aria-describedby="Titre">
             </div>
 
             <div class="mb-3">
-                <label for="" class="form-label">Description</label>
-                <textarea type="textarea" class="form-control" id="exampleInputDescription"
-                          aria-describedby="text"></textarea>
+                <label for="exampleInputDescription" class="form-label">Description</label>
+                <textarea name="tickets_desc" class="form-control" id="exampleInputDescription" aria-describedby="text"></textarea>
             </div>
 
             <div class="mb-3">
-                <label for="" class="form-label">Status</label>
-                <input type="text" class="form-control" id="exampleInputStatus" aria-describedby="Status">
+                <label for="exampleInputStatus" class="form-label">Status</label>
+                <input name="tickets_status" type="text" class="form-control" id="exampleInputStatus" aria-describedby="Status">
             </div>
 
             <div class="mb-3">
@@ -81,8 +80,8 @@
             </div>
 
             <div class="mb-3">
-                <label for="" class="form-label">Priority</label>
-                <input type="text" class="form-control" id="exampleInputPriority" aria-describedby="Priority">
+                <label for="exampleInputPriority" class="form-label">Priority</label>
+                <input name="tickets_priority" type="text" class="form-control" id="exampleInputPriority" aria-describedby="Priority">
             </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>
