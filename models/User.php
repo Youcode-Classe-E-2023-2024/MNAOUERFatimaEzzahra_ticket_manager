@@ -15,13 +15,7 @@ class User
     {
         global $db;
 
-        $result = $db->query("INSERT INTO users (users_username, users_email, users_password) VALUES ('$username', '$email', '$pwd');");
-
-        if (!$result) {
-            header("Location:" . __URI__ . "index.php?page=register");
-        } else {
-            header("Location:" . __URI__ . "index.php?page=home");
-        }
+        return $db->query("INSERT INTO users (users_username, users_email, users_password) VALUES ('$username', '$email', '$pwd');");
     }
 
     function login($email, $password)
