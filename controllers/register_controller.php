@@ -5,7 +5,11 @@ if (isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['ema
     include_once 'models/User.php';
     $user = new User();
 
-    $user->register($_POST['username'],$_POST['email'], $_POST['pwd']);
+    $result = $user->register($_POST['username'],$_POST['email'], $_POST['pwd']);
 
-    header("Location:" . __URI__ . "index.php?page=home");
+    if ($result) {
+        header("Location:" . __URI__ . "index.php?page=login");
+    } else {
+        header("Location:" . __URI__ . "index.php?page=register");
+    }
 }
