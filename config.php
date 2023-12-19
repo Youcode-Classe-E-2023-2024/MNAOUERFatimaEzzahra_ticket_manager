@@ -7,7 +7,7 @@ function dd($var)
     print_r($var);
     echo '</pre>';
     echo '</code>';
-    die();
+//    die();
 }
 
 define('__URI__', "http://" . $_SERVER['HTTP_HOST'] . "/MNAOUERFatimaezzahra_ticket_manager/");
