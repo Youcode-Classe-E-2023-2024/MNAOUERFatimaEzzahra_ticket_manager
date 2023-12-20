@@ -4,10 +4,10 @@ function dd($var)
 {
     echo '<code>';
     echo '<pre>';
-    var_dump($_POST);
+    var_dump($var);
     echo '</pre>';
     echo '</code>';
-//    die();
+    die();
 }
 
 define('__URI__', "http://" . $_SERVER['HTTP_HOST'] . "/MNAOUERFatimaezzahra_ticket_manager/");

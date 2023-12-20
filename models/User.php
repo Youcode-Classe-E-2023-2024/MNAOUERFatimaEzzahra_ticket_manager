@@ -11,6 +11,12 @@ class User
 
     }
 
+    function select_users(){
+        global $db;
+        $result= $db->query("SELECT * FROM users;");
+        return $result->fetch_all(1);
+    }
+
     function register($username, $email, $pwd)
     {
         global $db;

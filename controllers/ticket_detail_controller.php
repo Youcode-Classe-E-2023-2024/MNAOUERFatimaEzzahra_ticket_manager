@@ -1,5 +1,5 @@
 <?php
-dd($_GET);
+//dd($_GET);
 
 
 //if (!isset($_SESSION['user_id'])) {
@@ -13,8 +13,13 @@ dd($_GET);
 include_once 'models/Ticket.php';
 $ticket = new Ticket();
 $id = $_GET['id'];
+
 $result = $ticket->selectById($id);
-$ticket = $result[0];
+
 //print_r($ticket['tickets_id']);
 // Debug
 //dd($result);
+
+$tags = $ticket->selectTagsById($id);
+$users = $ticket->selectUsersById($id);
+//dd($users);
