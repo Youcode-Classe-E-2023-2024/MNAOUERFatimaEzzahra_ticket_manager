@@ -11,6 +11,13 @@ class Ticket
         global $db;
 
         $result= $db->query("SELECT * FROM tickets");
+        return $result->fetch_assoc();
+    }
+
+    function selectById($id)
+    {
+        global $db;
+        $result= $db->query("SELECT tickets_id, tickets_title, tickets_desc FROM tickets WHERE tickets_id='$id'");
         return $result->fetch_all(1);
     }
 
