@@ -28,7 +28,7 @@
             <div class="mb-3">
                 <label for="" class="form-label">Tag</label>
 <!--                <input type="text" class="form-control" id="exampleInputStatus" aria-describedby="Status">-->
-                <select class="form-select" id="multiple-select-field-tag" data-placeholder="Choose anything" multiple>
+                <select name="tags_name[]" class="form-select" id="multiple-select-field-tag" data-placeholder="Choose anything" multiple>
                     <option>Christmas Island</option>
                     <option>South Sudan</option>
                     <option>Jamaica</option>
@@ -55,9 +55,9 @@
             <div class="mb-3">
                 <label for="" class="form-label">Assigned To</label>
 <!--                <input type="text" class="form-control" id="exampleInputAssignedTo" aria-describedby="AssignedTo">-->
-                <select class="form-select" id="multiple-select-field-assign" data-placeholder="Choose anything" multiple>
-                    <option>Christmas Island</option>
-                    <option>South Sudan</option>
+                <select name="assign_to[]" class="form-select" id="multiple-select-field-assign" data-placeholder="Choose anything" multiple>
+                    <option value="1">Christmas Island</option>
+                    <option value="2">South Sudan</option>
                     <option>Jamaica</option>
                     <option>Kenya</option>
                     <option>French Guiana</option>
