@@ -1,6 +1,15 @@
 <?php
 //dd($_GET);
 
+if (isset($_POST['comment']) && !empty($_POST['comment'])) {
+    // Instantier la classe utilisateur
+    include_once 'models/Ticket.php';
+    $ticket = new Ticket();
+
+    $result = $ticket->comment($_SESSION['user_id'], $_GET['id'], $_POST['comment']);
+
+    header("Location:" . __URI__ . "index.php?page=ticket_detail&id=" . $_GET['id']);
+}
 
 //if (!isset($_SESSION['user_id'])) {
 //    header('Location: index.php?page=login');
@@ -22,4 +31,5 @@ $result = $ticket->selectById($id);
 
 $tags = $ticket->selectTagsById($id);
 $users = $ticket->selectUsersById($id);
+$comments = $ticket->selectCommentById($id);
 //dd($users);

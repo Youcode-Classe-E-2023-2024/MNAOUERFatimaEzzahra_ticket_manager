@@ -22,6 +22,13 @@ class Ticket
         return $result->fetch_all(1);
     }
 
+    function selectCommentById($id)
+    {
+        global $db;
+        $result = $db->query("SELECT text FROM comment WHERE id = '$id';");
+        return $result->fetch_all(1);
+    }
+
     function selectTagsById($id)
     {
         global $db;
@@ -84,6 +91,13 @@ class Ticket
     function assign()
     {
         echo 'assign';
+    }
+
+    public function comment($user_id, $ticket_id, $text)
+    {
+        global $db;
+        $user_id = $_SESSION['user_id'];
+        return $db->query("INSERT INTO comment (text, creatorId, ticketId) VALUES ('$text','$user_id', '$ticket_id');");
     }
 
 }
