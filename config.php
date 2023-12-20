@@ -4,7 +4,7 @@ function dd($var)
 {
     echo '<code>';
     echo '<pre>';
-    print_r($var);
+    var_dump($_POST);
     echo '</pre>';
     echo '</code>';
 //    die();
