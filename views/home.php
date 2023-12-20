@@ -35,7 +35,7 @@
             <tbody>
             <tr>
                 <th scope="row"><?= $ticket['tickets_id']?></th>
-                <td><a href="index.php?page=ticket_detail"><?= $ticket['tickets_title']?>'</a></td>
+                <td><a href="index.php?page=ticket_detail&id=<?= $ticket['tickets_id'] ?>"><?= $ticket['tickets_title']?>'</a></td>
                 <td><?= $ticket['tickets_desc']?></td>
                 <td><?= $ticket['tickets_status']?></td>
                 <td><?= $ticket['tickets_priority']?></td>
