@@ -25,7 +25,7 @@ class Ticket
     function selectCommentById($id)
     {
         global $db;
-        $result = $db->query("SELECT text FROM comment WHERE id = '$id';");
+        $result = $db->query("SELECT text FROM comment WHERE ticketId = '$id';");
         return $result->fetch_all(1);
     }
 

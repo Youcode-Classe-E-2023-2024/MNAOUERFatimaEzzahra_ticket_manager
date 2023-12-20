@@ -32,4 +32,5 @@ $result = $ticket->selectById($id);
 $tags = $ticket->selectTagsById($id);
 $users = $ticket->selectUsersById($id);
 $comments = $ticket->selectCommentById($id);
+//dd($comments);
 //dd($users);
