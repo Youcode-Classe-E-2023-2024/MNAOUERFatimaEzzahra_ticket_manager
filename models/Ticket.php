@@ -96,7 +96,6 @@ class Ticket
     public function comment($user_id, $ticket_id, $text)
     {
         global $db;
-        $user_id = $_SESSION['user_id'];
         return $db->query("INSERT INTO comment (text, creatorId, ticketId) VALUES ('$text','$user_id', '$ticket_id');");
     }
 

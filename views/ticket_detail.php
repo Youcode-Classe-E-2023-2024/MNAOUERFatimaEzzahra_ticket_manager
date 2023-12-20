@@ -52,17 +52,18 @@
                         <div class="col-lg-12">
                             <h5 class="comment-title">Leave a Comment</h5>
                             <div class="row">
-                                <form action="index.php?page=ticket_detail&id=<?= $_GET['id'] ?>">
-                                <div class="col-12 mb-3">
+                                <form action="index.php?page=ticket_detail&id=<?= $_GET['id'] ?>" method="post">
+                                    <div class="col-12 mb-3">
 
-                                    <label for="comment-message">Message</label>
+                                        <label for="comment-message">Message</label>
 
-                                    <textarea class="form-control" id="comment-message" placeholder="Enter your name"
-                                              cols="30" rows="5" name="comment"></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <input type="submit" class="btn btn-primary" value="Post comment">
-                                </div>
+                                        <textarea class="form-control" id="comment-message"
+                                                  placeholder="Enter your name"
+                                                  cols="30" rows="5" name="comment"></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary">Send</button>
+                                    </div>
                                 </form>
                             </div>
                         </div>
